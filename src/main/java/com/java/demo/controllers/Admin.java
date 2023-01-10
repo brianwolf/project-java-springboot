@@ -2,6 +2,8 @@ package com.java.demo.controllers;
 
 import java.util.HashMap;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,14 +19,20 @@ import com.java.demo.configs.Vars;
 @RequestMapping("/")
 public class Admin {
 
+    private static Logger logger = LoggerFactory.getLogger(Admin.class);
+
     @Autowired
     private ConfigVars configVars;
 
     @GetMapping("/")
     public ResponseEntity<Object> getMessages() {
 
+        String version = configVars.get(Vars.VERSION);
+
         HashMap<String, Object> result = new HashMap<>();
-        result.put("version", configVars.get(Vars.VERSION));
+        result.put("version", version);
+
+        logger.info(String.format("version = %s", version));
 
         return ResponseEntity.status(200).body(result);
     }

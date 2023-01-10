@@ -1,6 +1,11 @@
-server:
-  port: 8080
-
 VERSION: local
-LOG_LEVEL: INFO
-LOG_PATH: /tmp/java.logs
+
+server:
+  port: ${PORT:8080}
+
+logging:
+  file: 
+    name: ${LOG_PATH:/tmp/java.log}
+  level:
+    org:
+      springframework: ${LOG_LEVEL:INFO}
