@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.java.demo.configs.AppException;
+import com.java.demo.errors.ExampleServiceErrors;
 import com.java.demo.models.Example;
 import com.java.demo.services.ExampleService;
 
@@ -27,5 +29,15 @@ public class ExampleController {
         logger.info(example.toString());
 
         return ResponseEntity.status(200).body(example);
+    }
+
+    @GetMapping("/error")
+    public ResponseEntity<?> error() throws Exception {
+        throw new Exception("BOOOOM!!!");
+    }
+
+    @GetMapping("/error/business")
+    public ResponseEntity<?> errorBusiness() throws AppException {
+        throw new AppException(ExampleServiceErrors.BOOOM, "Se rompio todo");
     }
 }
