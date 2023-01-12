@@ -17,9 +17,9 @@ import com.java.demo.configs.Vars;
 
 @RestController
 @RequestMapping("/")
-public class Admin {
+public class AdminController {
 
-    private static Logger logger = LoggerFactory.getLogger(Admin.class);
+    private static Logger logger = LoggerFactory.getLogger(AdminController.class);
 
     @Autowired
     private ConfigVars configVars;

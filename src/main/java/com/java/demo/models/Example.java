@@ -15,4 +15,6 @@ public class Example {
 
     private String str;
     private Date date;
+    private Double doubleVar;
+    private Integer integer;
 }
