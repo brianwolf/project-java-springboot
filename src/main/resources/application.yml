@@ -1,4 +1,4 @@
-VERSION: local
+VERSION: ${VERSION:local}
 
 server:
   port: ${PORT:8080}
