@@ -1,4 +1,4 @@
-package com.java.demo.configs;
+package com.demo.configs;
 
 import java.io.IOException;
 

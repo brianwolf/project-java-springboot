@@ -1,4 +1,4 @@
-package com.java.demo.errors;
+package com.demo.errors;
 
 public enum ExampleServiceErrors {
     BOOOM

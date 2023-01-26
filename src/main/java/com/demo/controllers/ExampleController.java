@@ -1,4 +1,4 @@
-package com.java.demo.controllers;
+package com.demo.controllers;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -8,10 +8,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.java.demo.configs.AppException;
-import com.java.demo.errors.ExampleServiceErrors;
-import com.java.demo.models.Example;
-import com.java.demo.services.ExampleService;
+import com.demo.configs.AppException;
+import com.demo.errors.ExampleServiceErrors;
+import com.demo.models.Example;
+import com.demo.services.ExampleService;
 
 @RestController
 @RequestMapping("/examples")

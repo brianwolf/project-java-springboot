@@ -1,6 +1,6 @@
-package com.java.demo.services;
+package com.demo.services;
 
-import com.java.demo.models.Example;
+import com.demo.models.Example;
 
 public interface ExampleService {
 
