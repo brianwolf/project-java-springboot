@@ -1,6 +1,6 @@
-package com.demo.services;
+package com.brianlobo.demo.services;
 
-import com.demo.models.Example;
+import com.brianlobo.demo.models.Example;
 
 public interface ExampleService {
 

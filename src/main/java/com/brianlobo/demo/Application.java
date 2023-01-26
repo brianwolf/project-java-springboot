@@ -1,4 +1,4 @@
-package com.demo;
+package com.brianlobo.demo;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

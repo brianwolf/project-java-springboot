@@ -1,4 +1,4 @@
-package com.demo.configs;
+package com.brianlobo.demo.configs;
 
 import java.util.HashMap;
 

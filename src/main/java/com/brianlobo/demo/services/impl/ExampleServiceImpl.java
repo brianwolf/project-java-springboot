@@ -1,11 +1,11 @@
-package com.demo.services.impl;
+package com.brianlobo.demo.services.impl;
 
 import java.util.Date;
 
 import org.springframework.stereotype.Service;
 
-import com.demo.models.Example;
-import com.demo.services.ExampleService;
+import com.brianlobo.demo.models.Example;
+import com.brianlobo.demo.services.ExampleService;
 
 @Service
 public class ExampleServiceImpl implements ExampleService {

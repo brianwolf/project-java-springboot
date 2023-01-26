@@ -1,4 +1,4 @@
-package com.demo.controllers;
+package com.brianlobo.demo.controllers;
 
 import java.util.HashMap;
 
@@ -25,7 +25,7 @@ public class AdminController {
     @GetMapping("/")
     public ResponseEntity<Object> getMessages() {
 
-        String version = env.getProperty("VERSION");
+        String version = env.getProperty("project.version");
 
         HashMap<String, Object> result = new HashMap<>();
         result.put("version", version);
