@@ -2,8 +2,6 @@ package com.brianlobo.demo.controllers;
 
 import java.util.HashMap;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
 import org.springframework.http.ResponseEntity;
@@ -13,11 +11,12 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import org.springframework.web.servlet.view.RedirectView;
 
+import lombok.extern.slf4j.Slf4j;
+
 @RestController
+@Slf4j
 @RequestMapping("/")
 public class AdminController {
-
-    private static Logger logger = LoggerFactory.getLogger(AdminController.class);
 
     @Autowired
     private Environment env;
@@ -30,7 +29,7 @@ public class AdminController {
         HashMap<String, Object> result = new HashMap<>();
         result.put("version", version);
 
-        logger.info(String.format("version = %s", version));
+        log.info(String.format("version = %s", version));
 
         return ResponseEntity.status(200).body(result);
     }

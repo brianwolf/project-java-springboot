@@ -1,6 +1,6 @@
 package com.brianlobo.demo.models;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -13,8 +13,9 @@ import lombok.NoArgsConstructor;
 @Builder
 public class Example {
 
+    private Long id;
     private String str;
-    private Date date;
+    private LocalDate date;
     private Double doubleVar;
     private Integer integer;
 }
