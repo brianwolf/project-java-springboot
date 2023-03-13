@@ -13,11 +13,19 @@ logging:
 
 spring:
   datasource:
-    driver-class-name: org.sqlite.JDBC
-    url: jdbc:sqlite:sqlite.db
+    url: jdbc:h2:mem:db
     username: sa
     password: sa
+    driver-class-name: org.h2.Driver
   jpa:
-    database-platform: org.hibernate.dialect.SQLiteDialect
+    database-platform: org.hibernate.dialect.H2Dialect
     show-sql: false
-    hibernate.ddl-auto: create-drop 
+    open-in-view: false
+    properties:
+      jakarta:
+        persistence: 
+          sharedCache: 
+            mode: NONE
+  h2:
+    console:
+      path: /h2
