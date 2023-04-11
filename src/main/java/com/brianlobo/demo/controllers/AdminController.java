@@ -34,8 +34,8 @@ public class AdminController {
         return ResponseEntity.status(200).body(result);
     }
 
-    @GetMapping("/docs")
+    @GetMapping("/docs/")
     public RedirectView docs(RedirectAttributes attributes) {
-        return new RedirectView("swagger-ui/index.html");
+        return new RedirectView("/swagger-ui/index.html#/");
     }
 }
