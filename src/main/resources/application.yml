@@ -20,7 +20,7 @@ spring:
     show-sql: false
     open-in-view: false
     hibernate:
-      ddl-auto: create
+      ddl-auto: update
   h2:
     console:
       path: /h2
