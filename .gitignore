@@ -52,3 +52,6 @@ local.properties
 ## VScode
 ##############################
 .vscode
+
+sqlite.db
+.scannerwork

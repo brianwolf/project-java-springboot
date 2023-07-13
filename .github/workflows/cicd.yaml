@@ -6,7 +6,6 @@ on:
       - "*"
       
 jobs:
-
   get-version:
     runs-on: ubuntu-latest
     steps:
@@ -19,7 +18,6 @@ jobs:
     outputs:
       version: ${{ steps.create-version.outputs.version }}
   
-
   build-and-push:
     needs: get-version
     runs-on: ubuntu-latest
@@ -33,8 +31,8 @@ jobs:
       uses: docker/login-action@v2
       with:
         registry: docker.io
-        username: ${{ secrets.DOCKER_USER }}
-        password: ${{ secrets.DOCKER_TOKEN }}   
+        username: ${{ secrets.DOCKER_HUB_USER }}
+        password: ${{ secrets.DOCKER_HUB_TOKEN }}   
     - name: Build and push
       id: docker_build
       uses: docker/build-push-action@v2
@@ -42,9 +40,19 @@ jobs:
         push: true
         context: ./
         file: ./Dockerfile
-        tags: docker.io/${{ secrets.DOCKER_USER }}/${{ secrets.APP_NAME }}:${{ needs.get-version.outputs.version }},docker.io/${{ secrets.DOCKER_USER }}/${{ secrets.APP_NAME }}:latest 
+        tags: docker.io/brianwolf94/java-springboot:${{ needs.get-version.outputs.version }} 
         platforms: linux/amd64
         build-args: ARG_VERSION=${{ needs.get-version.outputs.version }}
+    - name: Build and push latest
+      id: docker_build_latest
+      uses: docker/build-push-action@v2
+      with:
+        push: true
+        context: ./
+        file: ./Dockerfile
+        tags: docker.io/brianwolf94/java-springboot:latest
+        platforms: linux/amd64
+        build-args: ARG_VERSION=latest
     outputs:
       version: ${{ needs.get-version.outputs.version }}
   
